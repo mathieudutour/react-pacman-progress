@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <title>react-pacman-progress example (without JSX)</title>
+  <link rel="stylesheet" href="../react-pacman-progress.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    html, body, #pacman-progress, .container, .slide {
+      height: 100%;
+    }
+    .container {
+      width: 100%;
+      overflow: hidden;
+    }
+    .slide  {
+      width: 100%;
+      position: absolute;
+      transition: all 0.3s ease-out;
+      color: #FFF;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 30%;
+      font-size: 3em;
+    }
+  </style>
+</head>
+<body>
+  <div id="pacman-progress"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.0/react.min.js"></script>
+  <script src="../react-pacman-progress.js"></script>
+  <script>
+    var SliderContainer = React.createClass({
+      displayName: "SliderContainer",
+      getInitialState: function() {
+        return {currentIndex: 0};
+      },
+      render: function() {
+        var slides = [
+          {color: '#37BFB7'},
+          {color: '#F48B7E'},
+          {color: '#94CC70'}
+        ]
+        return (
+          React.createElement("div", {className:"container", onClick:this.handleClick},
+            slides.map(function(slide, i) {
+        	    return React.createElement(Slide, {index: i, currentIndex: this.state.currentIndex, color: slide.color});
+            }.bind(this)),
+            React.createElement(PacmanProgress, {items: slides.length, currentIndex: this.state.currentIndex, onClick: this.handleClickPacman})
+          )
+        );
+      },
+
+      handleClick: function(e) {
+        if (!e.defaultPrevented) {
+          this.setState({currentIndex: this.state.currentIndex + 1});
+        }
+      },
+
+      handleClickPacman: function(index, isPacman, e) {
+        e.preventDefault();
+        this.setState({currentIndex: index});
+      }
+    });
+    var Slide = React.createClass({
+      displayName: "Slide",
+
+      render: function() {
+        return (
+          React.createElement("div", {className:"slide", style:{
+            backgroundColor: this.props.color,
+            transform: "translate(" + (this.props.index - this.props.currentIndex) * 100 + "%, 0)"
+          }},"Click")
+        );
+      }
+    });
+
+    React.render(React.createElement(SliderContainer, null), document.getElementById("pacman-progress"));
+  </script>
+</body>
+</html>

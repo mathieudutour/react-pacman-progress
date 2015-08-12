@@ -1,0 +1,33 @@
+{
+  "name": "react-pacman-progress",
+  "main": [
+    "react-pacman-progress.js",
+    "react-pacman-progress.css"
+  ],
+  "version": "0.1.9",
+  "homepage": "https://github.com/mathieudutour/react-pacman-progress",
+  "description": "Simple react.js component for a fun prgress indicator",
+  "keywords": [
+    "react",
+    "progress",
+    "pacman",
+    "component",
+    "javascript",
+    "react-component"
+  ],
+  "authors": [
+    "Mathieu Dutour <mathieu@dutour.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ],
+  "dependencies": {
+    "react": "^0.12.0"
+  }
+}
