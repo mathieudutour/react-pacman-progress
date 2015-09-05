@@ -1,6 +1,6 @@
-# react-progress-button
+# react-pacman-progress
 
-> Simple [React](http://facebook.github.io/react/index.html) component for a fun prgress indicator.
+> Simple [React](http://facebook.github.io/react/index.html) component for a fun progress indicator.
 
 ### [Demo](https://mathieudutour.github.io/react-pacman-progress)
 
