@@ -4,7 +4,7 @@
     "react-pacman-progress.js",
     "react-pacman-progress.css"
   ],
-  "version": "0.1.9",
+  "version": "0.2.0",
   "homepage": "https://github.com/mathieudutour/react-pacman-progress",
   "description": "Simple react.js component for a fun prgress indicator",
   "keywords": [
