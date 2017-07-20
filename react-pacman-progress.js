@@ -18,7 +18,7 @@
     getDefaultProps: function() {
       return {
         classNamespace: '',
-        onCLick: function() {}
+        onClick: function() {}
       };
     },
 
